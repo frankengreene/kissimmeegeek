@@ -18,4 +18,5 @@ future updates:
 - full friday recognition
 - currency system
 - activity/rich presence
+- suggestions
   
