@@ -13,3 +13,6 @@ future updates:
 - bde meter
 - more funny emojis
 - whatever
+- responding to 'geek' 'geek bot' 'geekbot' whetehr its the start or end of the sentence
+- full friday recognition
+  
