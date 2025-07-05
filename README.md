@@ -17,4 +17,5 @@ future updates:
 - responding to 'geek' 'geek bot' 'geekbot' whetehr its the start or end of the sentence
 - full friday recognition
 - currency system
+- activity/rich presence
   
