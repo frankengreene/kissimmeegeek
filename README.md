@@ -1,0 +1,15 @@
+kissimmee geek 1.1
+
+current features (working):
+- rate feature (geek rate)
+- posts silly emojis when name mentioned
+- fmk feature (geek fmk 1 2 3)
+- friday posting (to be tested)
+
+future updates:
+- easter eggs
+- weather
+- birthdays
+- bde meter
+- more funny emojis
+- whatever
