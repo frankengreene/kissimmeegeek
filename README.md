@@ -5,6 +5,7 @@ current features (working):
 - posts silly emojis when name mentioned
 - fmk feature (geek fmk 1 2 3)
 - friday posting (to be tested)
+- help feature (geek help)
 
 future updates:
 - easter eggs
@@ -15,4 +16,5 @@ future updates:
 - whatever
 - responding to 'geek' 'geek bot' 'geekbot' whetehr its the start or end of the sentence
 - full friday recognition
+- currency system
   
