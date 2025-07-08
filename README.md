@@ -1,4 +1,11 @@
-kissimmee geek 1.1
+kissimmee geek 1.2
+
+updates:
+- added emojis
+- added insult feature
+- fixed responding to whenever mentioned (hopefully)
+- added tunes
+- added interaction with toddbot
 
 current features (working):
 - rate feature (geek rate)
@@ -14,7 +21,6 @@ future updates:
 - bde meter
 - more funny emojis
 - whatever
-- responding to 'geek' 'geek bot' 'geekbot' whetehr its the start or end of the sentence
 - full friday recognition
 - currency system
 - activity/rich presence
