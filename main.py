@@ -156,7 +156,7 @@ async def on_message(message):
         elif command_body.endswith("?"):
             await message.channel.send(random.choice(answers))
 
-        if "geek" in content or "geekbot" in content or "geek bot" in content:
+        if "geek" in content or "geekbot" in content or "geek bot" in content or content == "geek" or content == "geek bot" or content == "geekbot":
             emoji_pool = [
                 "<:772feb36aaa513276a9b4aecb16eaa53:1391070916292640908>",
                 "<:hurr_dursley_400x400:1391070901344276511>",
