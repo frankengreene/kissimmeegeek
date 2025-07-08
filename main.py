@@ -106,21 +106,7 @@ async def on_message(message):
             await message.channel.send(random.choice(phrases))
 
     # Respond with a random emoji combo if someone just says "geek" or "geekbot"
-    if "geek" in content or "geekbot" in content or "geek bot" in content:
-        emoji_pool = [
-            "<:772feb36aaa513276a9b4aecb16eaa53:1391070916292640908>",
-            "<:hurr_dursley_400x400:1391070901344276511>",
-            "<:e77fded8efd184fd13d2c3b05f004b58:1391070947989131327>",
-            "<:BHzzLI9kpc0H0wEvBxQbrGRIZEl3cclK:1391930930628919356>",
-            "<:Screenshotfrom20250707195445:1391931011046051910>",
-            "<:Screenshotfrom20250707195503:1391931030327525526>",
-            "<:Screenshotfrom20250707195525:1391931055862448168>",
-            "<:Screenshotfrom20250707195542:1391931075810426981>",
-            "<:Screenshotfrom20250707195551:1391931098484838500>"
-        ]
-        chosen_emoji = random.choice(emoji_pool)
-        await message.channel.send(chosen_emoji)
-        return
+
 
     # Handle "geek ..." or "geekbot ..." commands
     if content.startswith("geek ") or content.startswith("geekbot "):
@@ -169,6 +155,22 @@ async def on_message(message):
 
         elif command_body.endswith("?"):
             await message.channel.send(random.choice(answers))
+
+        if "geek" in content or "geekbot" in content or "geek bot" in content:
+            emoji_pool = [
+                "<:772feb36aaa513276a9b4aecb16eaa53:1391070916292640908>",
+                "<:hurr_dursley_400x400:1391070901344276511>",
+                "<:e77fded8efd184fd13d2c3b05f004b58:1391070947989131327>",
+                "<:BHzzLI9kpc0H0wEvBxQbrGRIZEl3cclK:1391930930628919356>",
+                "<:Screenshotfrom20250707195445:1391931011046051910>",
+                "<:Screenshotfrom20250707195503:1391931030327525526>",
+                "<:Screenshotfrom20250707195525:1391931055862448168>",
+                "<:Screenshotfrom20250707195542:1391931075810426981>",
+                "<:Screenshotfrom20250707195551:1391931098484838500>"
+            ]
+            chosen_emoji = random.choice(emoji_pool)
+            await message.channel.send(chosen_emoji)
+            return
 
     await bot.process_commands(message)
 
