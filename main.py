@@ -116,7 +116,9 @@ async def on_message(message):
             help_text = (
                 "**GeekBot Help:**\n"
                 "`geek rate <item>` - Rates an item from 1 to 10 with an emoji.\n"
-                "`geek fmk <name1> <name2> <name3>` - Plays Fuck, Marry, Kill with three names."
+                "`geek fmk <name1> <name2> <name3>` - Plays Fuck, Marry, Kill with three names.\n"
+                "`geek insult @` - insults discord user\n"
+                "`geek lets boogie` - links to one of geek's favorite tunes that really resonates with him"
             )
             await message.channel.send(help_text)
 
