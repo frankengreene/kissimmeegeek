@@ -18,14 +18,44 @@ bot = commands.Bot(command_prefix=None, intents=intents)
 bot.case_insensitive = True
 
 phrases = [
-    "I'm watching you.",
-    "Try harder next time.",
-    "Did you really think that would work?",
-    "Error: User too cringe.",
-    "That's a skill issue."
+    "I'm watching you, Toddbot.",
+    "Try harder next time, Toddbot.",
+    "Toddbot, is that the best you can do?",
+    "Error: Toddbot too cringe.",
+    "That's a Toddbot skill issue."
 ]
 
-CHANNEL_ID = 123456789012345678
+insults = [
+    "Get bent, geek.",
+    "I never loved you.",
+    "They're two halves of a whole idiot.",
+    "You're dumb.",
+    "Keep it up and you'll be in a cupboard under the stairs.",
+    "Change the record, would ya?"
+]
+
+answers = [
+    "Ask me later.",
+    "Maybe, for a price.",
+    "No shot.",
+    "When the mountains blow in the wind.",
+    "Yes, I'd love to.",
+    "No.",
+    "Yes.",
+    "Absolutely.",
+    "You know it!"
+
+]
+
+tunes = [
+    "https://youtu.be/UFFa0QoHWvE?si=sVXkCfDAoz8a5iV6",
+    "https://youtu.be/2XAfRB18fD0?si=56uFHQ1jUOMU43yX",
+    "https://youtu.be/HCxJ4gAt2cs?si=HZDqnB_aUhojs97U",
+    "https://youtu.be/IeqtAB1WgEw?si=zE4EwoV_ymTtuROq",
+    "https://youtu.be/lcOxhH8N3Bo?si=A3pWD8kBbVHpqImY"
+]
+
+CHANNEL_ID = 1280171511176626257
 TIMEZONE = pytz.timezone("America/New_York")
 
 worship_phrases = [
@@ -36,7 +66,7 @@ worship_phrases = [
     "Praise be to Clem, the supreme overlord! 🔥",
 ]
 
-CLEM_ID = 123456789012345678  # Replace with Clem’s actual Discord user ID
+CLEM_ID = 408838778073907212  # Replace with Clem’s actual Discord user ID
 
 async def scheduled_message():
     channel = bot.get_channel(CHANNEL_ID)
@@ -52,25 +82,6 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send("Pong!")
 
-@bot.command(name="insult")
-async def insult(ctx, member: discord.Member = None):
-    if not member:
-        member = ctx.author
-    burn = random.choice(phrases)
-    await ctx.send(f"{member.mention} {burn}")
-
-@bot.command(name="rate")
-async def rate(ctx, *, item: str = None):
-    if not item:
-        await ctx.send("Rate what? Try `!rate your questionable idea`")
-        return
-
-    score = random.randint(1, 10)
-    reactions = [
-        "🔥", "💩", "👍", "👎", "🤖", "😬", "💀", "😂", "🍕", "🎯"
-    ]
-    response = f"{item.capitalize()}? {score}/10. {random.choice(reactions)}"
-    await ctx.send(response)
 
 @bot.event
 async def on_message(message):
@@ -89,12 +100,23 @@ async def on_message(message):
             await asyncio.sleep(1)
             await message.channel.send(f"Behold, the glorious Clem! {random.choice(worship_phrases)}")
 
+    if message.author.id == 461265486655520788:
+        if random.random() < 1.0:
+            await asyncio.sleep(1)
+            await message.channel.send(random.choice(phrases))
+
     # Respond with a random emoji combo if someone just says "geek" or "geekbot"
-    if content == "geek" or content == "geekbot" or content == "geek bot":
+    if "geek" in content or "geekbot" in content or "geek bot" in content:
         emoji_pool = [
             "<:772feb36aaa513276a9b4aecb16eaa53:1391070916292640908>",
             "<:hurr_dursley_400x400:1391070901344276511>",
-            "<:e77fded8efd184fd13d2c3b05f004b58:1391070947989131327>"
+            "<:e77fded8efd184fd13d2c3b05f004b58:1391070947989131327>",
+            "<:BHzzLI9kpc0H0wEvBxQbrGRIZEl3cclK:1391930930628919356>",
+            "<:Screenshotfrom20250707195445:1391931011046051910>",
+            "<:Screenshotfrom20250707195503:1391931030327525526>",
+            "<:Screenshotfrom20250707195525:1391931055862448168>",
+            "<:Screenshotfrom20250707195542:1391931075810426981>",
+            "<:Screenshotfrom20250707195551:1391931098484838500>"
         ]
         chosen_emoji = random.choice(emoji_pool)
         await message.channel.send(chosen_emoji)
@@ -117,8 +139,14 @@ async def on_message(message):
 
         elif command_body.startswith("insult"):
             mentioned = message.mentions[0] if message.mentions else message.author
-            burn = random.choice(phrases)
+            burn = random.choice(insults)
             await message.channel.send(f"{mentioned.mention} {burn}")
+
+
+
+        elif command_body.startswith("lets boogie"):
+            boogie = random.choice(tunes)
+            await message.channel.send(boogie)
 
         elif command_body.startswith("rate"):
             item = command_body[5:].strip()
@@ -138,6 +166,9 @@ async def on_message(message):
                 random.shuffle(choices)
                 response = "\n".join(f"**{choice}:** {name.capitalize()}" for choice, name in zip(choices, args))
                 await message.channel.send(response)
+
+        elif command_body.endswith("?"):
+            await message.channel.send(random.choice(answers))
 
     await bot.process_commands(message)
 
