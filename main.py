@@ -58,7 +58,18 @@ tunes = [
     "https://youtu.be/2XAfRB18fD0?si=56uFHQ1jUOMU43yX",
     "https://youtu.be/HCxJ4gAt2cs?si=HZDqnB_aUhojs97U",
     "https://youtu.be/IeqtAB1WgEw?si=zE4EwoV_ymTtuROq",
-    "https://youtu.be/lcOxhH8N3Bo?si=A3pWD8kBbVHpqImY"
+    "https://youtu.be/lcOxhH8N3Bo?si=A3pWD8kBbVHpqImY",
+    "https://youtu.be/qnkuBUAwfe0?si=WKN4IvwKWBQX7e2H",
+    "https://youtu.be/WXBHCQYxwr0?si=XibHvwJ5Fgy8IrAz",
+    "https://youtu.be/uc6f_2nPSX8?si=zyciHpnjr26A6UuM",
+    "https://youtu.be/xs66JZVH3-E?si=EPumTdO75ok3G1SV",
+    "https://youtu.be/nuv0wYHXYy4?si=yf-6etdiTV2TrdPa",
+    "https://youtu.be/HHOn8u-c2wk?si=Tak2L7AT_47AAV2M"
+
+
+
+
+
 ]
 
 CHANNEL_ID = 1280171511176626257
