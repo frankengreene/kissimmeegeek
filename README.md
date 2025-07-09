@@ -25,4 +25,5 @@ future updates:
 - currency system
 - activity/rich presence
 - suggestions
+- decrease clem worship frequency
   
