@@ -22,7 +22,13 @@ phrases = [
     "Try harder next time, Toddbot.",
     "Toddbot, is that the best you can do?",
     "Error: Toddbot too cringe.",
-    "That's a Toddbot skill issue."
+    "That's a Toddbot skill issue.",
+    "Ya know Toddbot, you're not so bad.",
+    "That's enough Toddbot, you silly goose.",
+    "Are you approaching me, Toddbot?",
+    "Oh Toddbot, you so crazy.",
+    "Toddbot, we should grab drinks sometime."
+
 ]
 
 insults = [
@@ -78,6 +84,13 @@ async def scheduled_message():
 async def on_ready():
     print(f"{bot.user.name} has logged in.")
 
+    scheduler = AsyncIOScheduler(timezone=TIMEZONE)
+    scheduler.add_job(
+        scheduled_message,
+        CronTrigger(day_of_week="fri", hour=9, minute=0),
+    )
+    scheduler.start()
+
 @bot.command(name="ping")
 async def ping(ctx):
     await ctx.send("Pong!")
@@ -96,12 +109,12 @@ async def on_message(message):
 
     # Occasionally worship Clem when Clem sends messages (10% chance)
     if message.author.id == CLEM_ID:
-        if random.random() < 0.1:
+        if random.random() < 0.05:
             await asyncio.sleep(1)
             await message.channel.send(f"Behold, the glorious Clem! {random.choice(worship_phrases)}")
 
     if message.author.id == 461265486655520788:
-        if random.random() < 1.0:
+        if random.random() < 0.3:
             await asyncio.sleep(1)
             await message.channel.send(random.choice(phrases))
 
