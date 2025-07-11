@@ -101,6 +101,8 @@ async def scheduled_message():
 @bot.event
 async def on_ready():
     print(f"{bot.user.name} has logged in.")
+    activity = discord.Activity(type=discord.ActivityType.listening, name="waiting for next Friday")
+    await bot.change_presence(status=discord.Status.online, activity=activity)
 
     scheduler = AsyncIOScheduler(timezone=TIMEZONE)
     scheduler.add_job(
