@@ -76,11 +76,20 @@ tunes = [
     "https://youtu.be/4ozXwgGFr7k?si=mCYwYguN1xHYUHNy",
     "https://youtu.be/6GEI3PpXEAo?si=LTOTJzEH50uNZ_xt"
 
+]
 
-
-
-
-
+positivity = [
+    "It's going to be alright.",
+    "You're doing your best, and that's what counts.",
+    "At the end of the day, only you need to like you.",
+    "Everything will work out.",
+    "You are enough.",
+    "The only goal worth achieving is to be a better, truer to yourself person than you were yesterday.",
+    "What you like matters. Who you are matters.",
+    "I love you for you.",
+    "Fuck the haters, keep your eye on the prize.",
+    "Sometimes life gets overwhelming. That's life. Always remember what brings you peace and keep it close.",
+    "It's only human to feel frustrated from external stimuli. Feel it, acknowledge it, decide what you can do to change it and if you cannot: let it go."
 
 ]
 
@@ -177,6 +186,9 @@ async def on_message(message):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
 
+        elif command_body.startswith("tell me something sweet to get me by"):
+            comp = random.choice(positivity)
+            await message.channel.send(positivity)
 
 
 
