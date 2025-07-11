@@ -64,7 +64,14 @@ tunes = [
     "https://youtu.be/uc6f_2nPSX8?si=zyciHpnjr26A6UuM",
     "https://youtu.be/xs66JZVH3-E?si=EPumTdO75ok3G1SV",
     "https://youtu.be/nuv0wYHXYy4?si=yf-6etdiTV2TrdPa",
-    "https://youtu.be/HHOn8u-c2wk?si=Tak2L7AT_47AAV2M"
+    "https://youtu.be/HHOn8u-c2wk?si=Tak2L7AT_47AAV2M",
+    "https://www.youtube.com/watch?v=Oe7bY9FuhpM&list=RDOe7bY9FuhpM&start_radio=1",
+    "https://youtu.be/GZ7o2IyDlmI?si=WbqBh7d7Xgkwqw8K",
+    "https://youtu.be/rYyjY-A7kE0?si=8IJJ0Bkm7gD1uKxR",
+    "https://youtu.be/4ozXwgGFr7k?si=mCYwYguN1xHYUHNy",
+    "https://youtu.be/6GEI3PpXEAo?si=LTOTJzEH50uNZ_xt"
+
+
 
 
 
@@ -118,7 +125,10 @@ async def on_message(message):
     if "clem" in content:
         await message.channel.send(random.choice(worship_phrases))
 
-    # Occasionally worship Clem when Clem sends messages (10% chance)
+    if "potter" in content:
+        await message.channel.send("I will not pay some crackpot old fool to teach him magic tricks!")
+
+    # Occasionally worship Clem when Clem sends messages (5% chance)
     if message.author.id == CLEM_ID:
         if random.random() < 0.05:
             await asyncio.sleep(1)
@@ -153,6 +163,9 @@ async def on_message(message):
             mentioned = message.mentions[0] if message.mentions else message.author
             burn = random.choice(insults)
             await message.channel.send(f"{mentioned.mention} {burn}")
+
+        elif command_body.startswith("gabagool"):
+            await message.channel.send("https://www.reddit.com/r/CirclejerkSopranos/comments/1lmzri0/i_didnt_start_that_fire_i_swear_on_mother_i_would/")
 
 
 
