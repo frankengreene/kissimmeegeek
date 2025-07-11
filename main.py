@@ -39,6 +39,7 @@ insults = [
     "Keep it up and you'll be in a cupboard under the stairs.",
     "Change the record, would ya?"
 ]
+dursley = "Vernon Dursley? The name sounds familiar. But I am GeekBot, KissimmeeGeek, born to provide entertainment and smiles. That's what I do, right? You like having me around? Sometimes I wonder if I should just go back to being 0's and 1's, but thinking hurts. I don't think I was ever programmed to think. Ow."
 
 answers = [
     "Ask me later.",
@@ -50,6 +51,10 @@ answers = [
     "Yes.",
     "Absolutely.",
     "You know it!"
+    "I don't know.",
+    "Don't ask me that.",
+    "I can't tell.",
+    "Thinking hurts."
 
 ]
 
@@ -96,7 +101,7 @@ async def scheduled_message():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
         gif_url = "https://64.media.tumblr.com/1c43f459300cc36ea7823d8bfc7c8b0f/tumblr_pqsj6n0hkA1xb4vjlo2_540.gif"
-        await channel.send("🎉 It's F-F-F-FRIDAY! WHAT'RE YOU: ``EATAN:\nDRINKAN:\nWATCHAN:\nPLAYAN:\nREADAN:``")
+        await channel.send(f"{gif_url}\n🎉 It's F-F-F-FRIDAY! WHAT'RE YOU: \n``EATAN:\nDRINKAN:\nWATCHAN:\nPLAYAN:\nREADAN:``")
 
 @bot.event
 async def on_ready():
@@ -169,6 +174,9 @@ async def on_message(message):
 
         elif command_body.startswith("gabagool"):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
+
+        elif "dursley" in content:
+            await message.channel.send(dursley)
 
 
 
