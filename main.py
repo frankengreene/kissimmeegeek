@@ -202,8 +202,8 @@ async def on_message(message):
 
         elif command_body.startswith("how can I do my part"):
             valor = random.choice(courage)
-            await message.channel.send(valor)
-            await message.channel.send("https://www.youtube.com/watch?v=S9STizATKjE")
+            await message.channel.send(f"{valor}\nhttps://www.youtube.com/watch?v=S9STizATKjE")
+
 
 
         elif command_body.startswith("lets boogie"):
