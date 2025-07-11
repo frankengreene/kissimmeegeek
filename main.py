@@ -164,11 +164,7 @@ async def on_message(message):
 
     # Respond with a random emoji combo if someone just says "geek" or "geekbot"
 
-    if "bug" in content:
-        await message.channel.send("The only good bug is a dead bug")
-        await message.channel.send("Would you like to know more? Yes/No")
-        if "yes" in content:
-            await message.channel.send("https://www.youtube.com/watch?v=LNW0IrFURok")
+
 
     if "dursley" in content:
         await message.channel.send(dursley)
