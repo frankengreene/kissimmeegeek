@@ -188,7 +188,7 @@ async def on_message(message):
 
         elif command_body.startswith("tell me something sweet to get me by"):
             comp = random.choice(positivity)
-            await message.channel.send(positivity)
+            await message.channel.send(comp)
 
 
 
