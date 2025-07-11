@@ -1,11 +1,11 @@
-kissimmee geek 1.2
+kissimmee geek 1.2.1
 
 updates:
-- added emojis
-- added insult feature
-- fixed responding to whenever mentioned (hopefully)
-- added tunes
-- added interaction with toddbot
+- fixed responding to whenever mentioned (lowered to 5%)
+- added more tunes
+- added interaction with toddbot (lowered to 30% of the time)
+- added some easter eggs
+- added rich presence/activity
 
 current features (working):
 - rate feature (geek rate)
@@ -13,6 +13,8 @@ current features (working):
 - fmk feature (geek fmk 1 2 3)
 - friday posting (to be tested)
 - help feature (geek help)
+- insult feature
+- can answer yes and no questions
 
 future updates:
 - easter eggs
@@ -23,7 +25,6 @@ future updates:
 - whatever
 - full friday recognition
 - currency system
-- activity/rich presence
 - suggestions
-- decrease clem worship frequency
+
   
