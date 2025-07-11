@@ -165,7 +165,7 @@ async def on_message(message):
             await message.channel.send(f"{mentioned.mention} {burn}")
 
         elif command_body.startswith("gabagool"):
-            await message.channel.send("https://www.reddit.com/r/CirclejerkSopranos/comments/1lmzri0/i_didnt_start_that_fire_i_swear_on_mother_i_would/")
+            await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
 
 
