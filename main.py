@@ -58,6 +58,12 @@ answers = [
 
 ]
 
+courage = [
+    "LIBERTY NEVER SLEEPS",
+    "DEMOCRACY IS NON-NEGOTIABLE",
+
+]
+
 tunes = [
     "https://youtu.be/UFFa0QoHWvE?si=sVXkCfDAoz8a5iV6",
     "https://youtu.be/2XAfRB18fD0?si=56uFHQ1jUOMU43yX",
@@ -158,6 +164,12 @@ async def on_message(message):
 
     # Respond with a random emoji combo if someone just says "geek" or "geekbot"
 
+    if "bug" in content:
+        await message.channel.send("The only good bug is a dead bug")
+        await message.channel.send("Would you like to know more? Yes/No")
+        if "yes" in content:
+            await message.channel.send("https://www.youtube.com/watch?v=LNW0IrFURok")
+
     if "dursley" in content:
         await message.channel.send(dursley)
     # Handle "geek ..." or "geekbot ..." commands
@@ -190,6 +202,10 @@ async def on_message(message):
             comp = random.choice(positivity)
             await message.channel.send(comp)
 
+        elif command_body.startswith("how can I do my part?"):
+            valor = random.choice(courage)
+            await message.channel.send(valor)
+            await message.channel.send("https://www.youtube.com/watch?v=S9STizATKjE")
 
 
         elif command_body.startswith("lets boogie"):
