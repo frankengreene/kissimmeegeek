@@ -149,7 +149,8 @@ async def on_message(message):
 
     # Respond with a random emoji combo if someone just says "geek" or "geekbot"
 
-
+    if "dursley" in content:
+        await message.channel.send(dursley)
     # Handle "geek ..." or "geekbot ..." commands
     if content.startswith("geek ") or content.startswith("geekbot "):
         command_body = content.split(" ", 1)[1] if " " in content else ""
@@ -175,8 +176,7 @@ async def on_message(message):
         elif command_body.startswith("gabagool"):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
-        elif "dursley" in content:
-            await message.channel.send(dursley)
+
 
 
 
