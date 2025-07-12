@@ -163,7 +163,8 @@ async def on_message(message):
     if "bug" in content:
         await message.channel.send("The only good bug is a dead bug")
 
-
+    if "talos soprano" in content:
+        await message.channel.send("https://www.youtube.com/watch?v=NDvGNLuSxZA")
 
     if "dursley" in content:
         await message.channel.send(dursley)
@@ -207,12 +208,6 @@ async def on_message(message):
         elif command_body.startswith("factcheck"):
             await message.channel.send("https://youtu.be/A45xhkfKFII?si=iEg3rG7dZm2UMIrt")
 
-        elif command_body.startswith("talos soprano"):
-            await message.channel.send("https://www.youtube.com/watch?v=NDvGNLuSxZA")
-
-        elif command_body.endswith("over it"):
-            await message.channel.send("https://www.youtube.com/watch?v=M2iXv_eoUnc")
-
 
         elif command_body.startswith("lets boogie"):
             boogie = random.choice(tunes)
@@ -255,6 +250,9 @@ async def on_message(message):
         chosen_emoji = random.choice(emoji_pool)
         await message.channel.send(chosen_emoji)
         return
+
+    if "over it" in content:
+        await message.channel.send("https://www.youtube.com/watch?v=M2iXv_eoUnc")
 
     await bot.process_commands(message)
 
