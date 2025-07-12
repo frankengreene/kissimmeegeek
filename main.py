@@ -90,7 +90,8 @@ positivity = [
     "What you like matters. Who you are matters.",
     "I love you for you.",
     "Fuck the haters, keep your eye on the prize.",
-    "Sometimes life gets overwhelming. That's life. Always remember what brings you peace and keep it close.",
+    "It is possible to commit no mistakes and still lose. That is not a weakness. That is life.",
+    "Sometimes life gets overwhelming. Always remember what brings you peace and keep it close.",
     "It's only human to feel frustrated from external stimuli. Feel it, acknowledge it, decide what you can do to change it and if you cannot: let it go."
 
 ]
@@ -199,6 +200,18 @@ async def on_message(message):
         elif command_body.startswith("tell me something sweet to get me by"):
             comp = random.choice(positivity)
             await message.channel.send(comp)
+
+        elif command_body.startswith("whats on your mind"):
+            await message.channel.send("https://youtu.be/9S1EzkRpelY?si=6ESEYvtsGirVCo28")
+
+        elif command_body.startswith("factcheck"):
+            await message.channel.send("https://youtu.be/A45xhkfKFII?si=iEg3rG7dZm2UMIrt")
+
+        elif command_body.startswith("talos soprano"):
+            await message.channel.send("https://www.youtube.com/watch?v=NDvGNLuSxZA")
+
+        elif command_body.endswith("over it"):
+            await message.channel.send("https://www.youtube.com/watch?v=M2iXv_eoUnc")
 
 
         elif command_body.startswith("lets boogie"):
