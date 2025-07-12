@@ -141,14 +141,14 @@ async def on_message(message):
 
     content = message.content.lower().strip()
 
-    # Worship Clem if mentioned anywhere
+
     if "clem" in content:
         await message.channel.send(random.choice(worship_phrases))
 
     if "potter" in content:
         await message.channel.send("I will not pay some crackpot old fool to teach him magic tricks!")
 
-    # Occasionally worship Clem when Clem sends messages (5% chance)
+
     if message.author.id == CLEM_ID:
         if random.random() < 0.05:
             await asyncio.sleep(1)
@@ -159,7 +159,7 @@ async def on_message(message):
             await asyncio.sleep(1)
             await message.channel.send(random.choice(phrases))
 
-    # Respond with a random emoji combo if someone just says "geek" or "geekbot"
+
     if "bug" in content:
         await message.channel.send("The only good bug is a dead bug")
 
