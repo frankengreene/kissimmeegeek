@@ -191,14 +191,14 @@ async def on_message(message):
         elif command_body.startswith("gabagool"):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
+        elif command_body.startswith("how can I do my part"):
+            await message.channel.send("LIBERTY NEVER SLEEPS\nhttps://www.youtube.com/watch?v=S9STizATKjE")
+
+
 
         elif command_body.startswith("tell me something sweet to get me by"):
             comp = random.choice(positivity)
             await message.channel.send(comp)
-
-        elif command_body.startswith("how can I do my part"):
-            await message.channel.send("LIBERTY NEVER SLEEPS\nhttps://www.youtube.com/watch?v=S9STizATKjE")
-
 
 
         elif command_body.startswith("lets boogie"):
