@@ -58,11 +58,7 @@ answers = [
 
 ]
 
-courage = [
-    "LIBERTY NEVER SLEEPS",
-    "DEMOCRACY IS NON-NEGOTIABLE"
 
-]
 
 tunes = [
     "https://youtu.be/UFFa0QoHWvE?si=sVXkCfDAoz8a5iV6",
@@ -201,8 +197,7 @@ async def on_message(message):
             await message.channel.send(comp)
 
         elif command_body.startswith("how can I do my part"):
-            valor = random.choice(courage)
-            await message.channel.send(f"{valor}\nhttps://www.youtube.com/watch?v=S9STizATKjE")
+            await message.channel.send("LIBERTY NEVER SLEEPS\nhttps://www.youtube.com/watch?v=S9STizATKjE")
 
 
 
