@@ -191,7 +191,7 @@ async def on_message(message):
         elif command_body.startswith("gabagool"):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
-        elif command_body.startswith("how can I do my part"):
+        elif command_body.startswith("how can i do my part"):
             await message.channel.send("LIBERTY NEVER SLEEPS\nhttps://www.youtube.com/watch?v=S9STizATKjE")
 
 
