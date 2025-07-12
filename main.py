@@ -60,7 +60,7 @@ answers = [
 
 courage = [
     "LIBERTY NEVER SLEEPS",
-    "DEMOCRACY IS NON-NEGOTIABLE",
+    "DEMOCRACY IS NON-NEGOTIABLE"
 
 ]
 
