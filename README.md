@@ -2,6 +2,8 @@ kissimmee geek 1.2.2
 
 updates:
 - fixed responding to whenever clem mentioned (removed)
+- fixed posting multiple times on a Friday
+- fmk feature should be choosing randomly
 
 current features (working):
 - rate feature (geek rate)
