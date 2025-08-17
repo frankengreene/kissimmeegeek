@@ -1,11 +1,7 @@
-kissimmee geek 1.2.1
+kissimmee geek 1.2.2
 
 updates:
-- fixed responding to whenever mentioned (lowered to 5%)
-- added more tunes
-- added interaction with toddbot (lowered to 30% of the time)
-- added some easter eggs
-- added rich presence/activity
+- fixed responding to whenever clem mentioned (removed)
 
 current features (working):
 - rate feature (geek rate)
@@ -15,6 +11,8 @@ current features (working):
 - help feature (geek help)
 - insult feature
 - can answer yes and no questions
+- has some tunes to choose from
+- interactions with toddbot
 
 future updates:
 - easter eggs
