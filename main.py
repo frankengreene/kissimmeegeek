@@ -108,7 +108,7 @@ async def on_ready():
     scheduler = AsyncIOScheduler(timezone=TIMEZONE)
     scheduler.add_job(
         scheduled_message,
-        CronTrigger(day_of_week="fri", hour=9, minute=0),
+        CronTrigger(day_of_week="fri", hour=9, minute=0, second=0),
     )
     scheduler.start()
 
@@ -124,9 +124,8 @@ async def on_message(message):
 
     content = message.content.lower().strip()
 
-    # Worship Clem if mentioned anywhere
-    if "clem" in content:
-        await message.channel.send(random.choice(worship_phrases))
+
+
 
     if "potter" in content:
         await message.channel.send("I will not pay some crackpot old fool to teach him magic tricks!")
