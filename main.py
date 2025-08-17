@@ -39,6 +39,7 @@ insults = [
     "Keep it up and you'll be in a cupboard under the stairs.",
     "Change the record, would ya?"
 ]
+dursley = "Vernon Dursley? The name sounds familiar. But I am GeekBot, KissimmeeGeek, born to provide entertainment and smiles. That's what I do, right? You like having me around? Sometimes I wonder if I should just go back to being 0's and 1's, but thinking hurts. I don't think I was ever programmed to think. Ow."
 
 answers = [
     "Ask me later.",
@@ -50,8 +51,14 @@ answers = [
     "Yes.",
     "Absolutely.",
     "You know it!"
+    "I don't know.",
+    "Don't ask me that.",
+    "I can't tell.",
+    "Thinking hurts."
 
 ]
+
+
 
 tunes = [
     "https://youtu.be/UFFa0QoHWvE?si=sVXkCfDAoz8a5iV6",
@@ -59,7 +66,7 @@ tunes = [
     "https://youtu.be/HCxJ4gAt2cs?si=HZDqnB_aUhojs97U",
     "https://youtu.be/IeqtAB1WgEw?si=zE4EwoV_ymTtuROq",
     "https://youtu.be/lcOxhH8N3Bo?si=A3pWD8kBbVHpqImY",
-    "https://youtu.be/qnkuBUAwfe0?si=WKN4IvwKWBQX7e2H",
+    "https://youtu.be/E11DHiyxfLk?si=OeJ9TCCfQJ7wKS2G",
     "https://youtu.be/WXBHCQYxwr0?si=XibHvwJ5Fgy8IrAz",
     "https://youtu.be/uc6f_2nPSX8?si=zyciHpnjr26A6UuM",
     "https://youtu.be/xs66JZVH3-E?si=EPumTdO75ok3G1SV",
@@ -71,11 +78,21 @@ tunes = [
     "https://youtu.be/4ozXwgGFr7k?si=mCYwYguN1xHYUHNy",
     "https://youtu.be/6GEI3PpXEAo?si=LTOTJzEH50uNZ_xt"
 
+]
 
-
-
-
-
+positivity = [
+    "It's going to be alright.",
+    "You're doing your best, and that's what counts.",
+    "At the end of the day, only you need to like you.",
+    "Everything will work out.",
+    "You are enough.",
+    "The only goal worth achieving is to be a better, truer to yourself person than you were yesterday.",
+    "What you like matters. Who you are matters.",
+    "I love you for you.",
+    "Fuck the haters, keep your eye on the prize.",
+    "It is possible to commit no mistakes and still lose. That is not a weakness. That is life.",
+    "Sometimes life gets overwhelming. Always remember what brings you peace and keep it close.",
+    "It's only human to feel frustrated from external stimuli. Feel it, acknowledge it, decide what you can do to change it and if you cannot: let it go."
 
 ]
 
@@ -96,7 +113,7 @@ async def scheduled_message():
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
         gif_url = "https://64.media.tumblr.com/1c43f459300cc36ea7823d8bfc7c8b0f/tumblr_pqsj6n0hkA1xb4vjlo2_540.gif"
-        await channel.send("🎉 It's F-F-F-FRIDAY! WHAT'RE YOU: ``EATAN:\nDRINKAN:\nWATCHAN:\nPLAYAN:\nREADAN:``")
+        await channel.send(f"{gif_url}\n🎉 It's F-F-F-FRIDAY! WHAT'RE YOU: \n``EATAN:\nDRINKAN:\nWATCHAN:\nPLAYAN:\nREADAN:``")
 
 @bot.event
 async def on_ready():
@@ -108,7 +125,7 @@ async def on_ready():
     scheduler = AsyncIOScheduler(timezone=TIMEZONE)
     scheduler.add_job(
         scheduled_message,
-        CronTrigger(day_of_week="fri", hour=9, minute=0, second=0),
+        CronTrigger(day_of_week="fri", hour=9, minute=0),
     )
     scheduler.start()
 
@@ -125,12 +142,14 @@ async def on_message(message):
     content = message.content.lower().strip()
 
 
-
+    if "clem" in content:
+        if random.random() < 0.05:
+            await message.channel.send(random.choice(worship_phrases))
 
     if "potter" in content:
         await message.channel.send("I will not pay some crackpot old fool to teach him magic tricks!")
 
-    # Occasionally worship Clem when Clem sends messages (5% chance)
+
     if message.author.id == CLEM_ID:
         if random.random() < 0.05:
             await asyncio.sleep(1)
@@ -141,9 +160,15 @@ async def on_message(message):
             await asyncio.sleep(1)
             await message.channel.send(random.choice(phrases))
 
-    # Respond with a random emoji combo if someone just says "geek" or "geekbot"
 
+    if "bug" in content:
+        await message.channel.send("The only good bug is a dead bug")
 
+    if "talos soprano" in content:
+        await message.channel.send("https://www.youtube.com/watch?v=NDvGNLuSxZA")
+
+    if "dursley" in content:
+        await message.channel.send(dursley)
     # Handle "geek ..." or "geekbot ..." commands
     if content.startswith("geek ") or content.startswith("geekbot "):
         command_body = content.split(" ", 1)[1] if " " in content else ""
@@ -169,6 +194,20 @@ async def on_message(message):
         elif command_body.startswith("gabagool"):
             await message.channel.send("https://www.youtube.com/watch?v=zLVm8VS1z1s")
 
+        elif command_body.startswith("how can i do my part"):
+            await message.channel.send("LIBERTY NEVER SLEEPS\nhttps://www.youtube.com/watch?v=S9STizATKjE")
+
+
+
+        elif command_body.startswith("tell me something sweet to get me by"):
+            comp = random.choice(positivity)
+            await message.channel.send(comp)
+
+        elif command_body.startswith("whats on your mind"):
+            await message.channel.send("https://youtu.be/9S1EzkRpelY?si=6ESEYvtsGirVCo28")
+
+        elif command_body.startswith("factcheck"):
+            await message.channel.send("https://youtu.be/A45xhkfKFII?si=iEg3rG7dZm2UMIrt")
 
 
         elif command_body.startswith("lets boogie"):
@@ -212,6 +251,9 @@ async def on_message(message):
         chosen_emoji = random.choice(emoji_pool)
         await message.channel.send(chosen_emoji)
         return
+
+    if "over it" in content:
+        await message.channel.send("https://www.youtube.com/watch?v=M2iXv_eoUnc")
 
     await bot.process_commands(message)
 
